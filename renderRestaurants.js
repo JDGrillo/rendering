@@ -1,11 +1,26 @@
 
 function renderRestaurants(restaurants) {
-    
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
+    let finalHTML = ""
+    let restaurantsHTML = restaurants.map(function (rest){
+        restHTML = `
+        <div class="text-center mt-5" style="background-color:lightgrey;width:25%;display:inline-block;margin:15px;border-radius:2%">
+            <div style="font-size:25px;text-align:left">
+                ${rest.name}
+            </div>
+            <div style="text-align:left">
+                ${rest.type}
+            </div>
+            <div style="color:green;text-align:left">
+                ${"$".repeat(rest.priceRating)}
+            </div>
         </div>
-    `
+        `
+        return restHTML
+    })
+
+    finalHTML += restaurantsHTML.join("")
+
+    return finalHTML
 }
 
 function restaurants() {

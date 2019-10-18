@@ -1,10 +1,22 @@
-
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+    finalHTML = ""
+    moviesHTML = movies.map(function (movie) {
+        movieHTML = `
+        <div class="text-center mt-5" style="border:solid black 1px;display:flex">
+            <div class="col-5">
+                <img src = ${movie.poster}>
+            </div>
+            <div class="col-2">
+                ${movie.title} </br>
+                ${movie.year}
+            </div>
         </div>
-    `
+        `
+        return movieHTML
+    })
+    finalHTML += moviesHTML.join("")
+
+    return finalHTML
 }
 
 function movies() {
