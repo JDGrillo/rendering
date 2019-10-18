@@ -2,7 +2,7 @@
 function renderNametags(nametags) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
+            
         </div>
     `
 }
